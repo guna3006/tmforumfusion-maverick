@@ -1,0 +1,13 @@
+version: '3'
+services:
+  tmforumfusion-maverick:
+    image: guna3006/tmforumfusion-maverick:5.0.0
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./custom/tmf
+        target: /data/custom/tmf
+        read_only: true
+    ports:
+      - "9000:9000"
+      - "8000:8000"
